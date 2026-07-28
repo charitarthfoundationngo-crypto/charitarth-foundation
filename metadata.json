@@ -1,0 +1,6 @@
+{
+  "name": "Charitarth Foundation",
+  "description": "Empowering Rural India Through Education, Employment & Entrepreneurship - Official NGO Portal",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
