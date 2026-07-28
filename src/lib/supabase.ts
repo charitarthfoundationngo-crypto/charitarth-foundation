@@ -1,8 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Environment variable retrieval
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+// Environment variable retrieval (supports both VITE_ and NEXT_PUBLIC_ prefixes)
+const supabaseUrl = 
+  import.meta.env.VITE_SUPABASE_URL || 
+  import.meta.env.NEXT_PUBLIC_SUPABASE_URL || 
+  '';
+
+const supabaseAnonKey = 
+  import.meta.env.VITE_SUPABASE_ANON_KEY || 
+  import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 
+  import.meta.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 
+  '';
 
 export const isSupabaseConfigured = Boolean(
   supabaseUrl && 
