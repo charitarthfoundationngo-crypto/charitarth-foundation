@@ -110,7 +110,7 @@ export const MOTTO_DATA = {
 export const HERO_SLIDES = [
   {
     id: 'slide-1',
-    image: '/Photos/1BEBE08D-B612-4FBF-BC69-CA9621905A58.PNG',
+    image: '/Photos/F9DD4FB3-B6E5-4EEC-AA67-E8B9CFB0870F.PNG',
     tagline: 'THREE PILLARS • ONE MISSION • ENDLESS POSSIBILITIES',
     headline: 'Changing Lives. Creating Opportunities. Building Futures.',
     subheadline: 'Every child deserves education. Every youth deserves employment. Every entrepreneur deserves an opportunity. Together, we are building a self-reliant rural India across 200+ villages.',
@@ -119,7 +119,7 @@ export const HERO_SLIDES = [
   },
   {
     id: 'slide-2',
-    image: '/Photos/08BC5A20-C712-427D-AD06-21CA8BA47429.PNG',
+    image: '/Photos/IMG_3782.JPG',
     tagline: 'PILLAR I: QUALITY EDUCATION',
     headline: 'Education is not an expense. It is the greatest investment in humanity.',
     subheadline: 'Bridging the urban-rural divide with digital smart classrooms, STEM labs, and personalized career mentorship for first-generation learners.',
@@ -128,12 +128,21 @@ export const HERO_SLIDES = [
   },
   {
     id: 'slide-3',
-    image: '/Photos/19BAB20F-5A74-478C-B240-699D1CCB24EF.PNG',
+    image: '/Photos/C25D9240-BD5B-419C-A857-E1C4A41710A5.PNG',
     tagline: 'PILLAR II & III: EMPLOYMENT & ENTREPRENEURSHIP',
     headline: 'Potential Exists Everywhere. Opportunity Doesn’t.',
     subheadline: 'Transforming rural jobseekers into skilled technicians, solar innovators, and self-employed women leaders driving micro-enterprises across district economies.',
     primaryCta: 'Partner With Us',
     secondaryCta: 'Read Research Papers'
+  },
+  {
+    id: 'slide-4',
+    image: '/Photos/9AC49410-99F8-4BF9-B672-2EADE756E059.PNG',
+    tagline: '200+ VILLAGES ADOPTED',
+    headline: 'Empowering Grassroots Leadership Across Rural India',
+    subheadline: 'Working side-by-side with Gram Panchayats, village elders, and local youth to create enduring economic and social self-reliance.',
+    primaryCta: 'View Impact Map',
+    secondaryCta: 'Schedule Field Visit'
   }
 ];
 

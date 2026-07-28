@@ -43,11 +43,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Background Image with subtle gradient overlay */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <img
+                key={slide.id}
                 src={slide.image}
                 alt={slide.headline}
-                className="w-full h-full object-cover filter brightness-[0.35] contrast-[1.1] transition-transform duration-1000 group-hover:scale-105"
+                className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.08] transition-all duration-1000 group-hover:scale-105 animate-in fade-in"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/50 to-stone-900/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/92 via-stone-950/55 to-stone-950/30" />
             </div>
 
             {/* Floating Gold Halo Accent */}
