@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { VOLUNTEER_ROLES } from '../data/mockData';
 import { VolunteerRole } from '../types';
-import { Users, Code, Briefcase, TrendingUp, Stethoscope, Scale, Camera, Clock, MapPin, CheckCircle, Sparkles, Send, X } from 'lucide-react';
+import { Users, Code, Briefcase, TrendingUp, Stethoscope, Scale, Camera, Clock, MapPin, CheckCircle, Sparkles, Send, X, Loader2 } from 'lucide-react';
+import { submitVolunteer } from '../lib/supabase';
 
 interface VolunteerSectionProps {
   isOpenModal: boolean;
@@ -16,6 +17,7 @@ export const VolunteerSection: React.FC<VolunteerSectionProps> = ({
 }) => {
   const [selectedRole, setSelectedRole] = useState<VolunteerRole | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,8 +40,23 @@ export const VolunteerSection: React.FC<VolunteerSectionProps> = ({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+
+    const roleName = VOLUNTEER_ROLES.find(r => r.id === formData.roleId)?.title || formData.roleId;
+
+    await submitVolunteer({
+      full_name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      role: roleName,
+      city: formData.city,
+      availability: formData.availability,
+      motivation: formData.skills
+    });
+
+    setSubmitting(false);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);

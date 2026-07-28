@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { DONATION_TIERS, RECENT_DONORS } from '../data/mockData';
 import { DonationTier } from '../types';
 import { Heart, ShieldCheck, CheckCircle2, Sparkles, Download, QrCode, CreditCard, Building2, User, Lock, X } from 'lucide-react';
+import { submitDonation } from '../lib/supabase';
 
 import { Language, TRANSLATIONS } from '../data/translations';
 
@@ -45,8 +46,22 @@ export const DonationSection: React.FC<DonationSectionProps> = ({
 
   const activeAmount = customAmount ? parseFloat(customAmount) || 0 : selectedTier;
 
-  const handleDonateComplete = (e: React.FormEvent) => {
+  const handleDonateComplete = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    await submitDonation({
+      donor_name: donorDetails.name,
+      donor_email: donorDetails.email,
+      donor_phone: donorDetails.phone,
+      pan_number: donorDetails.pan,
+      amount: activeAmount,
+      frequency: frequency,
+      receipt_80g: true,
+      is_anonymous: false,
+      payment_status: 'completed',
+      transaction_id: 'TXN_' + Math.floor(1000000 + Math.random() * 9000000)
+    });
+
     onCloseModal();
     setShowReceiptModal(true);
   };

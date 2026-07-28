@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, Mail, Phone, MapPin, Send, ArrowUp, Sparkles, CheckCircle2, Instagram } from 'lucide-react';
 import { CONTACT_INFO, LOGO_URL } from '../data/mockData';
+import { subscribeNewsletter } from '../lib/supabase';
 
 interface FooterProps {
   onOpenDonateModal: () => void;
@@ -18,9 +19,10 @@ export const Footer: React.FC<FooterProps> = ({
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
+    await subscribeNewsletter(email);
     setSubscribed(true);
     setTimeout(() => setSubscribed(false), 4000);
     setEmail('');

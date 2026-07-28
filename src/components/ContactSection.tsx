@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Send, MapPin, Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Clock, CheckCircle2, Loader2 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/mockData';
+import { submitContactMessage } from '../lib/supabase';
 
 export const ContactSection: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -10,9 +11,20 @@ export const ContactSection: React.FC = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    
+    await submitContactMessage({
+      full_name: formState.name,
+      email: formState.email,
+      subject: formState.subject,
+      message: formState.message
+    });
+
+    setSubmitting(false);
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -161,10 +173,20 @@ export const ContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#1B5E20] to-[#2E7D32] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer hover:from-[#134017] hover:to-[#1B5E20] transition-all shadow-lg"
+                    disabled={submitting}
+                    className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#1B5E20] to-[#2E7D32] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-pointer hover:from-[#134017] hover:to-[#1B5E20] transition-all shadow-lg disabled:opacity-50"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Send Message</span>
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
 
                   <p className="text-center text-[10px] text-stone-500">
