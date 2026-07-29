@@ -7,7 +7,7 @@ export const CookieConsent: React.FC = () => {
   useEffect(() => {
     const consent = localStorage.getItem('charitarth-cookie-consent');
     if (!consent) {
-      const timer = setTimeout(() => setVisible(true), 2500);
+      const timer = setTimeout(() => setVisible(true), 3500);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -25,40 +25,41 @@ export const CookieConsent: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-6 z-50 max-w-lg mx-auto animate-in slide-in-from-bottom-4 fade-in">
-      <div className="bg-stone-950 text-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-stone-800 space-y-4">
+    <div className="fixed bottom-3 left-3 right-3 sm:left-6 sm:right-6 z-40 max-w-md mx-auto animate-in slide-in-from-bottom-4 fade-in">
+      <div className="bg-stone-950/95 backdrop-blur-xl text-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl border border-stone-800 space-y-3">
 
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex items-start gap-3">
-            <div className="w-9 h-9 rounded-full bg-[#1B5E20]/20 flex items-center justify-center shrink-0 mt-0.5">
-              <Shield className="w-4 h-4 text-emerald-400" />
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#1B5E20]/30 flex items-center justify-center shrink-0">
+              <Shield className="w-3.5 h-3.5 text-emerald-400" />
             </div>
-            <div className="space-y-1">
-              <h4 className="font-bold text-sm text-white">We Value Your Privacy</h4>
-              <p className="text-stone-400 text-xs leading-relaxed">
-                We use essential cookies to ensure the website functions properly. No tracking or advertising cookies are used. Your privacy is important to us.
+            <div className="truncate">
+              <h4 className="font-bold text-xs sm:text-sm text-white truncate">We Value Your Privacy</h4>
+              <p className="text-stone-400 text-[10px] sm:text-xs truncate">
+                Essential cookies only. No ad tracking used.
               </p>
             </div>
           </div>
+
           <button
             onClick={handleDecline}
-            className="p-1 rounded-full hover:bg-stone-800 text-stone-500 transition-colors cursor-pointer shrink-0"
+            className="p-1.5 rounded-full hover:bg-stone-800 text-stone-400 transition-colors cursor-pointer shrink-0"
             aria-label="Close cookie banner"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 pt-0.5">
           <button
             onClick={handleAccept}
-            className="flex-1 py-2.5 rounded-xl bg-[#1B5E20] hover:bg-[#134017] text-white font-bold text-xs uppercase tracking-wider cursor-pointer transition-colors"
+            className="flex-1 py-2 sm:py-2.5 rounded-xl bg-[#1B5E20] hover:bg-[#134017] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider cursor-pointer transition-colors"
           >
-            Accept All
+            Accept
           </button>
           <button
             onClick={handleDecline}
-            className="flex-1 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 font-bold text-xs uppercase tracking-wider cursor-pointer transition-colors"
+            className="flex-1 py-2 sm:py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 font-bold text-[11px] sm:text-xs uppercase tracking-wider cursor-pointer transition-colors"
           >
             Essential Only
           </button>

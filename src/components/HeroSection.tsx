@@ -32,14 +32,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const slide = HERO_SLIDES[currentSlide];
 
   return (
-    <section id="hero" className="pt-32 sm:pt-40 pb-16 bg-[#FAF9F6] text-[#212121] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    <section id="hero" className="pt-24 sm:pt-40 pb-12 sm:pb-16 bg-[#FAF9F6] text-[#212121] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 space-y-6">
 
         {/* Hero Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           {/* Bento Tile 1: Main Featured Story (Col-Span 7) */}
-          <div className="lg:col-span-7 bg-[#EAF6FF] rounded-[32px] relative overflow-hidden flex flex-col justify-between p-8 sm:p-12 shadow-sm border border-black/5 group min-h-[440px]">
+          <div className="lg:col-span-7 bg-[#EAF6FF] rounded-[28px] sm:rounded-[32px] relative overflow-hidden flex flex-col justify-between p-5 sm:p-12 shadow-sm border border-black/5 group min-h-[420px] sm:min-h-[480px]">
             {/* Background Image with subtle gradient overlay */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <img
@@ -48,27 +48,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 alt={slide.headline}
                 className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.08] transition-all duration-1000 group-hover:scale-105 animate-in fade-in"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/92 via-stone-950/55 to-stone-950/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 to-stone-950/30" />
             </div>
 
             {/* Floating Gold Halo Accent */}
             <div className="absolute -top-20 -right-20 w-80 h-80 border-[30px] border-[#D4AF37]/20 rounded-full pointer-events-none z-1" />
 
             {/* Top Badge */}
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest border border-white/20">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{slide.tagline}</span>
+            <div className="relative z-10 flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[#D4AF37] text-[10px] sm:text-[11px] font-bold uppercase tracking-widest border border-white/20 truncate">
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <span className="truncate">{slide.tagline}</span>
               </span>
 
               {/* Slide Counter Indicator */}
-              <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-white text-[11px]">
+              <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-[11px] shrink-0">
                 {HERO_SLIDES.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
                     className={`h-1.5 rounded-full transition-all ${
-                      idx === currentSlide ? 'w-6 bg-[#D4AF37]' : 'w-1.5 bg-white/50'
+                      idx === currentSlide ? 'w-5 sm:w-6 bg-[#D4AF37]' : 'w-1.5 bg-white/50'
                     }`}
                   />
                 ))}
@@ -76,21 +76,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Headline & Body Text */}
-            <div className="relative z-10 space-y-4 mt-12">
-              <h1 className="text-3xl sm:text-5xl leading-[1.1] text-white font-serif-title font-bold">
+            <div className="relative z-10 space-y-3 sm:space-y-4 mt-8 sm:mt-12">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.15] text-white font-serif-title font-bold">
                 {t.headline}<br />
                 <span className="text-[#D4AF37] italic font-editorial">{t.tagline}</span>
               </h1>
 
-              <p className="text-stone-200 text-sm sm:text-base max-w-xl leading-relaxed">
+              <p className="text-stone-200 text-xs sm:text-base max-w-xl leading-relaxed">
                 {t.subheadline}
               </p>
 
               {/* Action Button Row */}
-              <div className="flex flex-wrap items-center gap-3 pt-4">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2 sm:pt-4">
                 <button
                   onClick={onOpenDonateModal}
-                  className="px-7 py-3.5 bg-[#1B5E20] hover:bg-[#0D47A1] text-white font-bold rounded-full text-xs uppercase tracking-widest shadow-xl transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+                  className="px-5 sm:px-7 py-3 sm:py-3.5 bg-[#1B5E20] hover:bg-[#0D47A1] text-white font-bold rounded-full text-[11px] sm:text-xs uppercase tracking-widest shadow-xl transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
                 >
                   <Heart className="w-4 h-4 fill-white" />
                   <span>{t.donateNow}</span>
@@ -98,7 +98,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                 <button
                   onClick={onOpenVideoModal}
-                  className="px-6 py-3.5 bg-white/90 hover:bg-white text-stone-900 font-bold rounded-full text-xs uppercase tracking-widest shadow-md transition-colors flex items-center gap-2 cursor-pointer"
+                  className="px-4 sm:px-6 py-3 sm:py-3.5 bg-white/90 hover:bg-white text-stone-900 font-bold rounded-full text-[11px] sm:text-xs uppercase tracking-widest shadow-md transition-colors flex items-center gap-2 cursor-pointer"
                 >
                   <Play className="w-3.5 h-3.5 fill-stone-900" />
                   <span>{t.watchVideo}</span>
@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                 <button
                   onClick={onOpenVolunteerModal}
-                  className="px-6 py-3.5 border border-white/40 hover:bg-white/10 text-white font-bold rounded-full text-xs uppercase tracking-widest transition-colors cursor-pointer"
+                  className="px-4 sm:px-6 py-3 sm:py-3.5 border border-white/40 hover:bg-white/10 text-white font-bold rounded-full text-[11px] sm:text-xs uppercase tracking-widest transition-colors cursor-pointer"
                 >
                   <span>{t.becomeVolunteer}</span>
                 </button>

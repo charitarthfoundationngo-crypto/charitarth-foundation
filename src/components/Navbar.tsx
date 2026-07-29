@@ -153,9 +153,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Left Brand Identity: Logo + Wordmark */}
             <button
               onClick={() => scrollToSection('hero')}
-              className="flex items-center space-x-2 sm:space-x-3 text-left group cursor-pointer shrink-0"
+              className="flex items-center space-x-1.5 sm:space-x-3 text-left group cursor-pointer shrink-0 min-w-0"
             >
-              <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden p-0.5 bg-white shadow-md border border-emerald-900/10 group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <div className="relative w-8 h-8 sm:w-11 sm:h-11 rounded-full overflow-hidden p-0.5 bg-white shadow-md border border-emerald-900/10 group-hover:scale-105 transition-transform duration-300 shrink-0">
                 <img
                   src={LOGO_URL}
                   alt="Charitarth Foundation Official Logo"
@@ -163,14 +163,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 />
               </div>
               
-              <div className="flex flex-col">
-                <span className="font-serif-title font-bold text-stone-900 text-xs sm:text-base tracking-wider uppercase leading-tight group-hover:text-[#1B5E20] transition-colors">
+              <div className="flex flex-col truncate">
+                <span className="font-serif-title font-bold text-stone-900 text-xs sm:text-base tracking-wider uppercase leading-tight group-hover:text-[#1B5E20] transition-colors truncate">
                   Charitarth
                 </span>
-                <span className="text-[8px] sm:text-[10px] font-bold text-[#1B5E20] tracking-widest uppercase">
+                <span className="text-[7.5px] sm:text-[10px] font-bold text-[#1B5E20] tracking-widest uppercase truncate">
                   Foundation
                 </span>
-                <span className="hidden sm:block text-[9px] font-editorial italic text-stone-500 font-medium">
+                <span className="hidden sm:block text-[9px] font-editorial italic text-stone-500 font-medium truncate">
                   {isHindi ? 'साथ मिलकर, हम संभावनाएं बनाते हैं।' : 'Together, We Create Possibilities.'}
                 </span>
               </div>
