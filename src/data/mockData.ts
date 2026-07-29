@@ -193,7 +193,7 @@ export const PILLARS_DATA: PillarDetail[] = [
       { label: 'Average Wage Growth', value: '2.8x' }
     ],
     quote: 'Skills transform a dependent jobseeker into an empowered earner driving family stability.',
-    image: '/Photos/5C38A187-05D6-4197-AFB2-02EAD24C5943.PNG',
+    image: '/Photos/IMG_3820.JPG',
     caseStudyTitle: 'Green Livelihood Hub - Solar Tech Trainees in Gaya, Bihar',
     caseStudySnippet: 'Trained 140 rural youth in solar pump maintenance and grid maintenance, securing 92% placement across green energy enterprises.'
   },
@@ -218,7 +218,7 @@ export const PILLARS_DATA: PillarDetail[] = [
       { label: 'Micro Enterprises Started', value: '1,100+' }
     ],
     quote: 'When you fund a rural woman entrepreneur, you fund the prosperity of an entire village.',
-    image: '/Photos/9AC49410-99F8-4BF9-B672-2EADE756E059.PNG',
+    image: '/Photos/IMG_3783.JPG',
     caseStudyTitle: 'Prerna Artisan Collective - Handloom SHG in Odisha',
     caseStudySnippet: 'Mobilized 85 tribal women weavers, connected them with e-commerce platforms, increasing average monthly household income from ₹3,200 to ₹14,500.'
   }

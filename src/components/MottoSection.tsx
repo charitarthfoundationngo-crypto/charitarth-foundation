@@ -36,7 +36,7 @@ export const MottoSection: React.FC<MottoSectionProps> = ({ lang = 'en' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Banner Callout */}
-        <div className="bg-gradient-to-r from-[#1B5E20] via-[#2E7D32] to-[#134017] rounded-[40px] p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden border border-white/10">
+        <div className="bg-gradient-to-r from-[#1B5E20] via-[#2E7D32] to-[#134017] rounded-[28px] sm:rounded-[40px] p-5 sm:p-14 text-white shadow-2xl relative overflow-hidden border border-white/10">
           
           <div className="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
             <svg width="400" height="400" viewBox="0 0 100 100" fill="white">
@@ -45,17 +45,17 @@ export const MottoSection: React.FC<MottoSectionProps> = ({ lang = 'en' }) => {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-3xl space-y-6 text-center mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37] text-stone-950 text-xs font-black tracking-widest uppercase shadow-md">
+          <div className="relative z-10 max-w-3xl space-y-4 sm:space-y-6 text-center mx-auto">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4AF37] text-stone-950 text-[11px] font-black tracking-widest uppercase shadow-md">
               <Quote className="w-3.5 h-3.5" />
               <span>{t.badge}</span>
             </div>
 
-            <h2 className="font-serif-title text-4xl sm:text-6xl font-bold tracking-tight leading-tight text-amber-100">
+            <h2 className="font-serif-title text-2xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-amber-100">
               {t.heading}
             </h2>
 
-            <p className="text-stone-100 text-base sm:text-xl font-editorial italic max-w-2xl mx-auto leading-relaxed">
+            <p className="text-stone-100 text-xs sm:text-xl font-editorial italic max-w-2xl mx-auto leading-relaxed">
               {t.story}
             </p>
 

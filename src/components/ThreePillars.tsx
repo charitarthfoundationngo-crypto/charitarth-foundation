@@ -49,8 +49,8 @@ export const ThreePillars: React.FC<ThreePillarsProps> = ({ onOpenDonateModal, o
   };
 
   return (
-    <section id="pillars" className="py-24 bg-[#FAF9F6] text-stone-900 border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pillars" className="py-12 sm:py-24 bg-[#FAF9F6] text-stone-900 border-t border-stone-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
         <motion.div 
@@ -58,18 +58,18 @@ export const ThreePillars: React.FC<ThreePillarsProps> = ({ onOpenDonateModal, o
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto space-y-4"
+          className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1B5E20]/10 text-[#1B5E20] text-xs font-bold tracking-widest uppercase">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{t.badge}</span>
           </div>
 
-          <h2 className="font-serif-title text-3xl sm:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
+          <h2 className="font-serif-title text-2xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
             {t.heading}
           </h2>
 
-          <p className="text-stone-600 text-base sm:text-lg">
+          <p className="text-stone-600 text-xs sm:text-lg">
             {t.subheading}
           </p>
         </motion.div>
@@ -80,7 +80,7 @@ export const ThreePillars: React.FC<ThreePillarsProps> = ({ onOpenDonateModal, o
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
         >
           {PILLARS_DATA.map((pillar, idx) => {
             const IconComp = getPillarIcon(pillar.iconName);
@@ -92,17 +92,17 @@ export const ThreePillars: React.FC<ThreePillarsProps> = ({ onOpenDonateModal, o
                 key={pillar.id}
                 variants={cardVariants}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className={`${currentBg} rounded-[32px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col group cursor-pointer`}
+                className={`${currentBg} rounded-[28px] sm:rounded-[32px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col group cursor-pointer`}
                 onClick={() => setSelectedPillar(pillar)}
               >
                 {/* Image Header */}
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-52 sm:h-60 overflow-hidden">
                   <img
                     src={pillar.image}
                     alt={pillar.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-[0.85]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/40 to-transparent" />
                   
                   <div className="absolute top-4 left-4 right-4 flex justify-between items-center">
                     <span className="bg-white/95 backdrop-blur-md text-stone-900 text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
@@ -118,14 +118,14 @@ export const ThreePillars: React.FC<ThreePillarsProps> = ({ onOpenDonateModal, o
                       <IconComp className="w-3.5 h-3.5" />
                       <span>Pillar Program 0{idx + 1}</span>
                     </div>
-                    <h3 className="font-serif-title text-2xl font-bold">
+                    <h3 className="font-serif-title text-xl sm:text-2xl font-bold">
                       {pillar.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
+                <div className="p-5 sm:p-8 flex-1 flex flex-col justify-between space-y-4 sm:space-y-6">
                   <div className="space-y-3">
                     <p className="text-[#1B5E20] font-bold text-xs tracking-wider uppercase">
                       {pillar.subtitle}

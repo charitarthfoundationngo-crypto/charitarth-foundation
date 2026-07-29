@@ -35,11 +35,11 @@ export const LoadingScreen: React.FC = () => {
           />
         </div>
 
-        <div className="text-center space-y-2">
-          <h1 className="font-serif-title text-2xl sm:text-3xl font-bold text-white tracking-wider uppercase">
+        <div className="text-center space-y-2 max-w-[90vw] px-4">
+          <h1 className="font-serif-title text-lg sm:text-2xl md:text-3xl font-bold text-white tracking-wider uppercase leading-snug">
             Charitarth Foundation
           </h1>
-          <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.3em]">
+          <p className="text-[#D4AF37] text-[10px] sm:text-xs font-bold uppercase tracking-widest sm:tracking-[0.25em] leading-relaxed">
             Education • Employment • Entrepreneurship
           </p>
         </div>

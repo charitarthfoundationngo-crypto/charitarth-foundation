@@ -36,17 +36,17 @@ export const WhyCharitarthExists: React.FC<WhyCharitarthExistsProps> = ({
   ];
 
   return (
-    <section className="py-24 bg-white text-stone-900 border-t border-stone-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-24 bg-white text-stone-900 border-t border-stone-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0D47A1]/10 text-[#0D47A1] text-xs font-bold tracking-widest uppercase">
             <Target className="w-3.5 h-3.5" />
             <span>Why Charitarth Foundation Exists</span>
           </div>
 
-          <h2 className="font-serif-title text-3xl sm:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
+          <h2 className="font-serif-title text-2xl sm:text-4xl lg:text-5xl font-bold text-stone-900 tracking-tight leading-tight">
             “Potential Exists Everywhere. Opportunity Doesn’t.”
           </h2>
 
