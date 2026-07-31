@@ -1,0 +1,5 @@
+# User-agent configuration for Charitarth Foundation
+User-agent: *
+Allow: /
+
+Sitemap: https://charitarthfoundation.vercel.app/sitemap.xml
